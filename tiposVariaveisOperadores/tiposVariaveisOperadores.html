@@ -1,63 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Variáveis e Operadores em Python</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
     <header>
-        <img id="tipo" src="../imagine/1696972771963.jpg">
-
+        <img id="tipo" src="../imagine/1696972771963.jpg" alt="imagem tipo" />
         <nav>
             <ul>
-                <li>
-                    <a href="../index.html">Voltar</a>
-                </li>
+                <li><a href="../index.html">Voltar</a></li>
             </ul>
         </nav>
     </header>  
-    
-    <div id="banner"></div>
+
     <div id="variaveis-container">
         <div class="content">
-            <h1> O que é uma variavel na logica de programação ?</h1>
-            <div id="detalhes">
-                <p1>
-                    Uma variável na lógica de programação é um espaço na memória que armazena um 
-                    valor que pode mudar durante a execução do programa. Ela funciona como uma 
-                    caixa com um nome, onde você guarda um dado para usar depois
-                </p1>
-                <h2>Conceito Simples:</h2>
-                    <p2>
-                        Variável = nome dado a um valor armazenado.
-                    </p2>
-                <h3>Exemplo do mundo Real:</h3>
-                    <p3>
-                        Imagine uma caixa com uma etiqueta:
-                                Etiqueta: idade
-                                Conteúdo da caixa: 25
-                        Você pode depois mudar o valor dentro da caixa, por exemplo, para 26.
-                    </p3>
-                <h4>Exemplo em pseudocódigo:</h4>
-                    <p4>
-                        variável idade = 25
-                        escreva(idade)  // Isso mostra 25
-                        idade = 26
-                        escreva(idade)  // Agora mostra 26
-                    </p4>
-                <h5>Por que variáveis são importantes?</h5>
-                    <p5>
-                        Elas permitem que você:
-                            Guarde informações temporárias
-                            Reutilize dados
-                            Torne o programa mais flexível
-                    </p5>       
-            </div>
+            <h1>O que é uma variável na lógica de programação?</h1>
+            <p>
+                Uma variável na lógica de programação é um espaço na memória que armazena um 
+                valor que pode mudar durante a execução do programa. Ela funciona como uma 
+                caixa com um nome, onde você guarda um dado para usar depois.
+            </p>
+
+            <h2>Conceito Simples:</h2>
+            <p>Variável = nome dado a um valor armazenado.</p>
+
+            <h3>Exemplo do mundo real:</h3>
+            <p>
+                Imagine uma caixa com uma etiqueta:<br />
+                Etiqueta: <strong>idade</strong><br />
+                Conteúdo da caixa: <strong>25</strong><br />
+                Depois você pode mudar o valor dentro da caixa para <strong>26</strong>.
+            </p>
+
+            <h4>Exemplo em pseudocódigo:</h4>
+            <pre>
+                                                variável idade = 25
+                                                escreva(idade)  // Isso mostra 25
+                                                idade = 26
+                                                escreva(idade)  // Agora mostra 26
+            </pre>
+
+            <h5>Por que variáveis são importantes?</h5>
+            <p>
+                                            Elas permitem que você:<br />
+                                            - Guarde informações temporárias<br />
+                                            - Reutilize dados<br />
+                                            - Torne o programa mais flexível
+            </p>
         </div>
     </div>
 
+    <div class="simulador-variavel">
+        <h2>Simulação de Variável em Python</h2>
+        <button onclick="simularVariavel()">Simular</button>
+        <pre id="saidaVariavel"></pre>
+    </div>
 
+    <div class="calculadora">
+        <h2>Operadores Matemáticos</h2>
+
+        <label>Número 1:</label>
+        <input type="number" id="num1"><br />
+
+        <label>Número 2:</label>
+        <input type="number" id="num2"><br />
+
+        <label>Operação (+, -, *, /):</label>
+        <input type="text" id="op"><br /><br />
+
+        <button onclick="executarPython()">Calcular</button>
+        <button onclick="limparResultado()">Limpar</button>
+
+        <h3>Resultado:</h3>
+        <pre id="output">Resultado: </pre>
+    </div>
+
+    <!-- Pyodide e script externo -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <script src="executarPython.js"></script>
 </body>
 </html>
