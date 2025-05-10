@@ -53,16 +53,32 @@
                                             - Torne o programa mais flexível
             </p>
         </div>
+        <div class="simulador-variavel">
+            <h2>Simulação de Variável em Python</h2>
+            <button onclick="simularVariavel()">Simular</button>
+            <pre id="saidaVariavel"></pre>
+        </div>
     </div>
 
-    <div class="simulador-variavel">
-        <h2>Simulação de Variável em Python</h2>
-        <button onclick="simularVariavel()">Simular</button>
-        <pre id="saidaVariavel"></pre>
-    </div>
+   <div id="operadores-logicos">
+    <h2>Operadores Lógicos</h2>
+    <h3>
+        Os operadores lógicos são usados para comparar expressões booleanas (que resultam em True ou False) e combinar condições.
+         Eles são essenciais para a tomada de decisão e estrutura de controle em programação, como em if, while e outras.
+    </h3>
+    <h4>
+        Atribuição: Usada para definir ou atualizar o valor de variáveis. Além de = e +=, existem outros como -=, *=, /=, etc.<br />
+        Comparação: Compara valores e retorna true ou false. Prefira === e !== para evitar erros com conversão de tipos.<br />
+        Lógicos: Usados para combinar condições em estruturas como if. O || (OU) verifica se pelo menos uma condição é verdadeira,
+        enquanto o && (E) exige que todas sejam verdadeiras.<br />
+        Diferentes: Incluí != e !== para cobrir o termo "diferentes". O !== é mais seguro por verificar o tipo.
+        
+    </h4>
+   </div>
 
-    <div class="calculadora">
-        <h2>Operadores Matemáticos</h2>
+    <div class="operadoresMatematicos">
+        <h1>Operadores Matemático</h1>
+        <h2>Calculadora</h2>
 
         <label>Número 1:</label>
         <input type="number" id="num1"><br />
