@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomada de Decições</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -58,10 +59,56 @@
             <button onclick="conditionalSimulator()">Simular</button>
             <pre id="saidaCondicionais"></pre>
         </div>
-
-
-
     </div>
+
+    <div id="switch-case">
+    <div class="content">
+        <h1>Estrutura Switch Case</h1>
+        <p>
+            A estrutura <code>switch case</code> é usada para executar diferentes blocos de código com base no valor de uma expressão. É uma alternativa mais limpa a múltiplos <code>if else</code>.
+        </p>
+
+        <h2>Conceito Simples:</h2>
+        <p>
+            O <code>switch</code> compara uma expressão com valores definidos em <code>case</code>. Se houver correspondência, executa o código do caso. O <code>default</code> lida com valores não previstos.
+        </p>
+
+        <h3>Exemplo em Código:</h3>
+        <pre>
+                    let dia = 2;
+                    switch (dia) {
+                        case 1:
+                            console.log("Segunda-feira");
+                            break;
+                        case 2:
+                            console.log("Terça-feira");
+                            break;
+                        case 3:
+                            console.log("Quarta-feira");
+                            break;
+                        default:
+                            console.log("Dia inválido");
+                    }
+                    // Saída: Terça-feira
+        </pre>
+
+        <h5>Por que é importante?</h5>
+        <p>
+            Permite:<br />
+            - Simplificar múltiplas condições<br />
+            - Tornar o código mais legível<br />
+            - Lidar com seleções baseadas em valores fixos
+        </p>
+    </div>
+    <div class="simulador-switch">
+        <h2>Simulação de Switch Case</h2>
+        <p>Insira um número de 1 a 3 para o dia da semana:</p>
+        <label>Dia (1-3):</label>
+        <input type="number" id="diaInput"><br /><br />
+        <button onclick="simularSwitch()">Simular</button>
+        <pre id="saidaSwitch"></pre>
+    </div>
+</div>
     
 </body>
 </html>
