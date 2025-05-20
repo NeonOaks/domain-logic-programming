@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomada de Decições</title>
+</head>
+<body>
+    <header>
+        <img id="decision" src="../imagine/decisao.png" alt="img-decision">
+        <nav>
+            <ul>
+                <li><a href="../index.html">Voltar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="conditional-structures">
+        <div id="content">
+            <h1> Estruturas Condicionais:</h1>
+            <p>
+                Estruturas Condicionais, como <code>if</code>, <code>else if</code> e <code>else</code>,
+                permitemque o programa tome decisões com base em condições verdadeiras ou falsas.
+            </p>
+
+            <h2>Conceito Simples:</h2>
+            <p>
+                O <code>if</code> Verifica uma condição. Se for verdadeira, executa um bloco de código. O <code>else if</code>
+                testa condições adicionais, e o <code>else</code> executa um  bloco padrão se nenhuma condições for verdadeira.
+            </p>
+
+            <h3>Exemplo em Código:</h3>
+            <pre>
+                        let idade = 16;
+                        if(idade >= 18) {
+                            console.log("Maior de idade!");
+                        } else if (idade >=16) {
+                            console.log("Quase maior de idade!");
+                        } else {
+                            console.log("Menor de idade!");
+                        }
+                        //Saida: Quase Maior de idade!
+            </pre>
+
+            <h5>Por que são importantes?</h5>
+            <p>
+                Elas permitem:<br />
+                 - Tomar decisções com base em condições<br />
+                 - Controlar o fluxo de programa<br />
+                 - Criar lógica dinâmica
+            </p>
+        </div>
+        <div class="conditional-simulator">
+            <h2>Simulação de Estruturas Condicionais:</h2>
+            <p>Insira sua idade e veja o Resultado:</p>
+            <label>Idade:</label>
+            <input type="number" id="idadeCondicionalInput"><br /><br />
+            <button onclick="conditionalSimulator()">Simular</button>
+            <pre id="saidaCondicionais"></pre>
+        </div>
+
+
+
+    </div>
+    
+</body>
+</html>
