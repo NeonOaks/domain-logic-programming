@@ -5,29 +5,29 @@ function conditionalSimulator() {
     }
 
     try {
-        let idade = Number(document.getElementById("idadeCondicinnalInput").value);
+        let idade = Number(document.getElementById("idadeCondicionalInput").value);
         let resultado;
 
         if (isNaN(idade)) {
             resultado = "Por favor, insira um número válido.";
-        } else if ( idade >= 18) {
+        } else if (idade >= 18) {
             resultado = "Você é maior de idade!";
         } else if (idade >= 16) {
-            resultado = "Quase de maior de idade!";
+            resultado = "Quase maior de idade!";
         } else {
             resultado = "Você é menor de idade!";
         }
 
         outputElement.innerText = resultado;
     } catch (error) {
-        console.error("Erro ao executar Simulador idade: " , error);
+        console.error("Erro ao executar Simulador idade:", error);
         outputElement.innerText = "Erro: " + error.message;
     }
 }
 
 function limparResultado() {
     document.getElementById("saidaCondicionais").textContent = "";
-    document.getElementById("idadeCondicinnalInput").value = "";
+    document.getElementById("idadeCondicionalInput").value = "";
     
 }
 
