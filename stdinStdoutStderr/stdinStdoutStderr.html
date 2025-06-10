@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stdin Stdout Stderr</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -17,6 +18,100 @@
             </ul>
         </nav>
     </header>
-    
+
+     <div id="stdin-stdout-stderr">
+        <div id="content">
+        <h1> stdin (Standard Input):</h1>
+            <p>
+                É o canal por onde o programa recebe entrada de dados, geralmente do teclado ou de outro programa.<br />
+                Pense como: "O que o usuário digita ou o que outro processo envia para o meu programa."<br />
+                Exemplo: Quando você digita algo no terminal e o programa lê, isso vem do stdin.<br />
+            </p>
+              <h1> stdout (Standard Output):</h1>
+            <p>
+                É o canal por onde o programa envia sua saída normal, como resultados ou mensagens para o usuário.<br />
+                Geralmente, isso aparece no terminal/console.<br />
+                Pense como: "O que o programa quer mostrar para o usuário como resultado."<br />
+            </p>
+        <h1> stderr (Standard Error):</h1>
+            <p>
+                É o canal usado para enviar mensagens de erro ou diagnósticos.<br />
+                Também aparece no terminal, mas é separado do stdout para facilitar a distinção entre resultados normais e erros.<br />
+                Pense como: "O que o programa diz quando algo dá errado."<br />
+            </p>
+        <h5> Por que isso é importante?</h5>
+            <pre>
+                Interação com o usuário: stdin permite que seu programa receba dados do usuário (como formulários no terminal). 
+                stdout mostra resultados claros.<br />
+                Depuração: stderr ajuda a identificar problemas sem misturar mensagens de erro com a saída normal do programa.<br />
+                Integração com outros programas: Em sistemas como Linux, você pode redirecionar stdin, <br />
+                stdout e stderr para arquivos ou outros programas (usando >, |, etc.), o que é poderoso para automação.<br />
+                Boas práticas: Separar erros (stderr) de saídas normais (stdout) melhora a legibilidade e a manutenção do código.<br />
+            </pre>
+    </div>
+
+    <div id="simuletor-standard">
+        <h2>Simulador Terminal Standard</h2>
+          <p>Insira um número de 1 a 7 para o dia da semana:</p>
+        <label>Dia (1-7):</label>
+        <input type="number" id="diaInput"><br /><br />
+        <button onclick="simularSwitch()">Simular</button>
+         <button onclick="limparDay()">Limpar</button>
+        <pre id="saidaSwitch"></pre>
+    </div>
+
+    <div id="stderr-stack-type">
+        <h2>stderr:Stack de Erros (Stack Trace) </h2>
+            <p>
+              É um relatório gerado quando ocorre um erro em um programa, mostrando a sequência de chamadas de funções que levou ao erro.<br />
+              Pense nisso como um "mapa" que rastreia o caminho que o programa percorreu até o ponto onde algo deu errado.<br />
+              Ele lista as funções chamadas, em ordem, desde o início da execução até o momento do erro, incluindo o arquivo, a linha e, às vezes, a coluna onde o problema ocorreu.
+            </p>
+        <h5>Por que é importante?</h5>
+            <pre>
+                Depuração: Ajuda a identificar onde e por que o erro aconteceu, mostrando o contexto (quais funções foram chamadas).
+                Rastreabilidade: Permite seguir o "rastro" do código para entender a sequência de eventos que causou o problema.
+                Correção: Com o stack trace, você pode ir diretamente ao arquivo e linha problemáticos para corrigir o código.
+                Integração com ferramentas: Ferramentas de depuração (como IDEs ou logs) usam o stack trace para destacar o erro no código.
+            </pre>
+        <h6>Ele inclui</h6>
+            <pre>
+                O tipo de erro (ex.: "TypeError", "NullPointerException").
+                Uma mensagem descritiva (ex.: "Cannot read property 'x' of undefined").
+                Uma lista de chamadas de funções, com detalhes como arquivo, linha e coluna.
+            </pre>
+        <h3>Tipos de Erros:</h3>   
+            <p>
+                O tipo de erro é a categoria ou classificação do erro que ocorreu no programa. <br />
+                Cada linguagem de programação define seus próprios tipos de erros, mas eles geralmente se enquadram em grupos comuns.<br />
+                O tipo de erro é indicado no início da mensagem de erro (no stderr) e ajuda a entender a natureza do problema.<br />
+            </p>
+        <h5>Por que é importante?</h5>  
+            <pre>
+                Diagnóstico rápido: O tipo de erro indica imediatamente o que deu errado (ex.: acesso a uma variável nula, sintaxe incorreta, etc.).
+                Tratamento de erros: Em muitas linguagens, você pode capturar erros específicos (usando try/catch ou equivalentes) com base no tipo de erro.
+                Prevenção: Conhecer os tipos de erros comuns ajuda a escrever código mais robusto, com validações para evitar esses problemas.
+            </pre>
+        <h5>Tipos de erros comuns (genéricos e aplicáveis a várias linguagens)</h5>  
+            <p>
+                Erro de Sintaxe > Exemplo: SyntaxError: unexpected token, SyntaxError: missing ; before statement, ou SyntaxError: expected ':'.<br />
+                Erro de Tempo de Execução > Exemplo: ArithmeticException: division by zero, RuntimeError: invalid operation, ou Segmentation fault.<br />
+                Erro Lógico > Nenhuma mensagem (resultados incorretos);<br />
+                Erro de Tipo > Exemplo: TypeError: unsupported operand type(s), TypeError: cannot concatenate 'str' and 'int' objects, ou TypeError: 'undefined' is not a function.<br />
+                Erro de Referência > Exemplo: ReferenceError: variable is not defined, NameError: name 'x' is not defined, ou NullPointerException.<br />
+                Erro de Recursos (Resource Error) > Exemplo: FileNotFoundError: No such file or directory, IOException: cannot open file, ou NetworkError: connection refused.<br />
+            </p>
+
+    </div>
+      <div id="simuletor-stderr-trace-type">
+        <h2>Simulador Terminal Stderr</h2>
+          <p>Insira um número de 1 a 7 para o dia da semana:</p>
+        <label>Dia (1-7):</label>
+        <input type="number" id="diaInput"><br /><br />
+        <button onclick="simularSwitch()">Simular</button>
+         <button onclick="limparDay()">Limpar</button>
+        <pre id="saidaSwitch"></pre>
+    </div>
+
 </body>
 </html>
