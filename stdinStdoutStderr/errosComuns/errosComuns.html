@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erros Comuns em Programação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #444;
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+        }
+        .language-section {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .error {
+            margin: 10px 0;
+        }
+        .error h3 {
+            color: #d32f2f;
+            margin: 10px 0 5px;
+        }
+        .error p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .error code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .error .example {
+            background: #2e2e2e;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Erros Comuns em Programação</h1>
+
+    <div class="language-section">
+        <h2>JavaScript</h2>
+        <div class="error">
+            <h3>Erro de Sintaxe</h3>
+            <p><strong>Descrição:</strong> O código está malformado e não segue as regras da linguagem.</p>
+            <p><strong>Exemplo no console:</strong></p>
+            <div class="example">Uncaught SyntaxError: Unexpected token ')'</div>
+            <p><strong>Causa:</strong> Escrever <code>console.log("teste";</code> (falta fechar o parêntese).</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Tempo de Execução</h3>
+            <p><strong>Descrição:</strong> Ocorre durante a execução, quando o código tenta fazer algo inválido.</p>
+            <p><strong>Exemplo no console:</strong></p>
+            <div class="example">Uncaught TypeError: Cannot read properties of null (reading 'value')</div>
+            <p><strong>Causa:</strong> Tentar acessar <code>document.getElementById("inexistente").value</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro Lógico</h3>
+            <p><strong>Descrição:</strong> O código executa, mas o resultado está errado devido a uma falha na lógica.</p>
+            <p><strong>Exemplo no console:</strong></p>
+            <div class="example">Resultado: 10</div>
+            <p><strong>Causa:</strong> Usar <code>let soma = 5 + 5;</code> quando a intenção era <code>5 * 5</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Tipo</h3>
+            <p><strong>Descrição:</strong> Operação inválida devido a tipos incompatíveis.</p>
+            <p><strong>Exemplo no console:</strong></p>
+            <div class="example">Uncaught TypeError: num.toUpperCase is not a function</div>
+            <p><strong>Causa:</strong> Tentar <code>let num = 42; num.toUpperCase();</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Referência</h3>
+            <p><strong>Descrição:</strong> Tentativa de acessar uma variável ou função não definida.</p>
+            <p><strong>Exemplo no console:</strong></p>
+            <div class="example">Uncaught ReferenceError: funcaoInexistente is not defined</div>
+            <p><strong>Causa:</strong> Chamar <code>funcaoInexistente();</code> sem defini-la.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Recursos</h3>
+            <p><strong>Descrição:</strong> Falha ao acessar recursos externos, como rede ou arquivos.</p>
+            <p><strong>Exemplo no console:</strong></p>
+            <div class="example">POST http://127.0.0.1:5500/executar 405 (Method Not Allowed)</div>
+            <p><strong>Causa:</strong> Enviar <code>fetch("/executar", { method: "POST" })</code> para um servidor que não suporta POST.</p>
+        </div>
+    </div>
+
+    <div class="language-section">
+        <h2>Java</h2>
+        <div class="error">
+            <h3>Erro de Sintaxe</h3>
+            <p><strong>Descrição:</strong> Código não segue a sintaxe do Java.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">Main.java:3: error: ';' expected
+    System.out.println("Hello"
+                       ^</div>
+            <p><strong>Causa:</strong> Escrever <code>System.out.println("Hello"</code> sem fechar com <code>);</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Tempo de Execução</h3>
+            <p><strong>Descrição:</strong> Erro durante a execução, como acessar algo inválido.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">Exception in thread "main" java.lang.NullPointerException
+    at Main.main(Main.java:5)</div>
+            <p><strong>Causa:</strong> Tentar <code>String s = null; s.length();</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro Lógico</h3>
+            <p><strong>Descrição:</strong> O programa roda, mas o resultado está errado.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">Resultado: 15</div>
+            <p><strong>Causa:</strong> Usar <code>int result = 10 + 5;</code> quando a intenção era <code>10 * 5</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Tipo</h3>
+            <p><strong>Descrição:</strong> Tipos incompatíveis em uma operação.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">Main.java:5: error: incompatible types: String cannot be converted to int
+    int num = "123abc";
+              ^</div>
+            <p><strong>Causa:</strong> Atribuir uma string a uma variável <code>int</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Referência</h3>
+            <p><strong>Descrição:</strong> Acessar uma variável ou método inexistente.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">Main.java:5: error: cannot find symbol
+    inexistente();
+    ^</div>
+            <p><strong>Causa:</strong> Chamar <code>inexistente()</code> que não foi definido.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Recursos</h3>
+            <p><strong>Descrição:</strong> Falha ao acessar recursos como arquivos ou rede.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">Exception in thread "main" java.io.FileNotFoundException: arquivo.txt (No such file or directory)
+    at java.io.FileInputStream.open0(Native Method)</div>
+            <p><strong>Causa:</strong> Tentar abrir <code>new FileInputStream("arquivo.txt")</code>.</p>
+        </div>
+    </div>
+
+    <div class="language-section">
+        <h2>TypeScript</h2>
+        <div class="error">
+            <h3>Erro de Sintaxe</h3>
+            <p><strong>Descrição:</strong> Código malformado que viola as regras do TypeScript.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">app.ts:2:1 - error TS1005: ';' expected.
+console.log("teste"</div>
+            <p><strong>Causa:</strong> Escrever <code>console.log("teste"</code> sem fechar com <code>);</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Tempo de Execução</h3>
+            <p><strong>Descrição:</strong> Erro ao executar o código compilado.</p>
+            <p><strong>Exemplo no console:</strong></p>
+            <div class="example">Uncaught TypeError: Cannot read properties of undefined (reading 'length')</div>
+            <p><strong>Causa:</strong> Acessar <code>let arr: string[] | undefined; arr.length;</code> sem inicializar <code>arr</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro Lógico</h3>
+            <p><strong>Descrição:</strong> Código executa, mas o resultado está incorreto.</p>
+            <p><strong>Exemplo no console:</strong></p>
+            <div class="example">Resultado: 8</div>
+            <p><strong>Causa:</strong> Usar <code>let result: number = 4 + 4;</code> quando a intenção era <code>4 * 4</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Tipo</h3>
+            <p><strong>Descrição:</strong> Violação das regras de tipagem do TypeScript.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">app.ts:3:5 - error TS2322: Type 'string' is not assignable to type 'number'.
+    let num: number = "123";</div>
+            <p><strong>Causa:</strong> Atribuir uma string a uma variável tipada como <code>number</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Referência</h3>
+            <p><strong>Descrição:</strong> Referenciar algo não definido.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">app.ts:4:5 - error TS2304: Cannot find name 'funcaoInexistente'.
+    funcaoInexistente();</div>
+            <p><strong>Causa:</strong> Chamar <code>funcaoInexistente()</code> sem defini-la.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Recursos</h3>
+            <p><strong>Descrição:</strong> Falha ao acessar recursos externos.</p>
+            <p><strong>Exemplo no console:</strong></p>
+            <div class="example">POST http://127.0.0.1:5500/executar 405 (Method Not Allowed)</div>
+            <p><strong>Causa:</strong> Enviar <code>fetch("/executar", { method: "POST" })</code> para um servidor que não suporta POST.</p>
+        </div>
+    </div>
+
+    <div class="language-section">
+        <h2>SQL</h2>
+        <div class="error">
+            <h3>Erro de Sintaxe</h3>
+            <p><strong>Descrição:</strong> Consulta SQL malformada.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">ERROR: syntax error at or near "FORM" at character 16
+SELECT * FORM usuarios;</div>
+            <p><strong>Causa:</strong> Escrever <code>FORM</code> em vez de <code>FROM</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Tempo de Execução</h3>
+            <p><strong>Descrição:</strong> Erro durante a execução da consulta.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">ERROR: relation "tabela_inexistente" does not exist</div>
+            <p><strong>Causa:</strong> Tentar <code>SELECT * FROM tabela_inexistente;</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro Lógico</h3>
+            <p><strong>Descrição:</strong> Consulta executa, mas retorna dados errados.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">(Retorna 0 linhas)</div>
+            <p><strong>Causa:</strong> Usar <code>SELECT * FROM usuarios WHERE idade > 30;</code> quando a intenção era <code>idade < 30</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Tipo</h3>
+            <p><strong>Descrição:</strong> Operação com tipos incompatíveis.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">ERROR: operator does not exist: text + integer</div>
+            <p><strong>Causa:</strong> Tentar <code>SELECT nome + idade FROM usuarios;</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Referência</h3>
+            <p><strong>Descrição:</strong> Referenciar uma coluna ou tabela inexistente.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">ERROR: column "coluna_inexistente" does not exist</div>
+            <p><strong>Causa:</strong> Tentar <code>SELECT coluna_inexistente FROM usuarios;</code>.</p>
+        </div>
+        <div class="error">
+            <h3>Erro de Recursos</h3>
+            <p><strong>Descrição:</strong> Falha ao acessar recursos do banco.</p>
+            <p><strong>Exemplo no terminal:</strong></p>
+            <div class="example">ERROR: could not connect to server: Connection refused</div>
+            <p><strong>Causa:</strong> Tentar conectar a um banco de dados inativo.</p>
+        </div>
+    </div>
+</body>
+</html>

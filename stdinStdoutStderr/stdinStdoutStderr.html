@@ -15,6 +15,9 @@
                 <li>
                     <a href="../index.html">Voltar</a>
                 </li>
+                <li>
+                    <a href="./errosComuns/errosComuns.html">Erros mais Comuns(Java,JavaScript,TypeScript e SQL)</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -50,14 +53,14 @@
             </pre>
     </div>
 
-    <div id="simuletor-standard">
+   <div id="simuletor-standard">
         <h2>Simulador Terminal Standard</h2>
-          <p>Insira um número de 1 a 7 para o dia da semana:</p>
-        <label>Dia (1-7):</label>
-        <input type="number" id="diaInput"><br /><br />
-        <button onclick="simularSwitch()">Simular</button>
-         <button onclick="limparDay()">Limpar</button>
-        <pre id="saidaSwitch"></pre>
+        <p>Insira um número de 1 a 9:</p>
+        <label>Numero (1-9):</label>
+        <input type="number" id="numeroInput"><br /><br />
+        <button onclick="simulatorStandard()">Simular</button> <!-- Corrigido: simulatorStandard -->
+        <button onclick="limparNumero()">Limpar</button>
+        <pre id="standard"></pre>
     </div>
 
     <div id="stderr-stack-type">
@@ -112,6 +115,10 @@
          <button onclick="limparDay()">Limpar</button>
         <pre id="saidaSwitch"></pre>
     </div>
+
+    <!-- Pyodide e script externo -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <script src="executorJs.js"></script>
 
 </body>
 </html>
