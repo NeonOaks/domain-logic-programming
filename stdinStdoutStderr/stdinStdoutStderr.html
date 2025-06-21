@@ -53,15 +53,15 @@
             </pre>
     </div>
 
-   <div id="simuletor-standard">
-        <h2>Simulador Terminal Standard</h2>
-        <p>Insira um número de 1 a 9:</p>
-        <label>Numero (1-9):</label>
-        <input type="number" id="numeroInput"><br /><br />
-        <button onclick="simulatorStandard()">Simular</button> <!-- Corrigido: simulatorStandard -->
-        <button onclick="limparNumero()">Limpar</button>
-        <pre id="standard"></pre>
-    </div>
+<div id="simuletor-standard">
+    <h2>Simulador Terminal Standard Input Output</h2>
+    <p>Insira um número de 1 a 9:</p>
+    <label>Número (1-9):</label>
+    <input type="number" id="numeroInput"><br /><br />
+    <button onclick="simulatorStandard()">Simular</button>
+    <button onclick="limparNumero()">Limpar</button>
+    <pre id="standard"></pre>
+</div>
 
     <div id="stderr-stack-type">
         <h2>stderr:Stack de Erros (Stack Trace) </h2>
@@ -105,17 +105,14 @@
                 Erro de Recursos (Resource Error) > Exemplo: FileNotFoundError: No such file or directory, IOException: cannot open file, ou NetworkError: connection refused.<br />
             </p>
 
-    </div>
-      <div id="simuletor-stderr-trace-type">
-        <h2>Simulador Terminal Stderr</h2>
-          <p>Insira um número de 1 a 7 para o dia da semana:</p>
-        <label>Dia (1-7):</label>
-        <input type="number" id="diaInput"><br /><br />
-        <button onclick="simularSwitch()">Simular</button>
-         <button onclick="limparDay()">Limpar</button>
-        <pre id="saidaSwitch"></pre>
-    </div>
-
+<div id="simuletor-stderr-trace-type">
+    <h2>Simulador Terminal Stderr</h2>
+    <p>Insira uma Palavra:</p>
+    <input type="text" id="diaInput"><br /><br />
+    <button onclick="simulatorStderr()">Simular</button>
+    <button onclick="limparStderr()">Limpar</button>
+    <pre id="saidaStderr"></pre>
+</div>
     <!-- Pyodide e script externo -->
     <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
     <script src="executorJs.js"></script>

@@ -43,7 +43,6 @@ async function executarPython() {
 
 }
 
-
 function limparResultado() {
     document.getElementById("output").textContent = "Resultado: ";
     document.getElementById("num1").value = "";
