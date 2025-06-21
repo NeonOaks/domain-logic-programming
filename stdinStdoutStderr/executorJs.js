@@ -1,49 +1,25 @@
-// Inicializa o Pyodide com a versão especificada
+// Carrega o Pyodide
 let pyodideReady = loadPyodide({
-    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.26.2/full/"
+    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/"
 });
 
-// Função para carregar o Pyodide e o módulo executor.py
-async function carregarPythonExterno() {
-    console.log("Carregando Pyodide...");
-    let pyodide;
-    try {
-        pyodide = await pyodideReady;
-        console.log("Pyodide carregado com sucesso.");
-    } catch (error) {
-        console.error("Erro ao carregar Pyodide:", error);
-        throw new Error("Falha ao inicializar o Pyodide");
-    }
+// Função para carregar e executar o código Python externo
+async function executarPython() {
+    const pyodide = await pyodideReady;
 
-    // Verifica se o sistema de arquivos está disponível
-    if (!pyodide.FS) {
-        console.error("Sistema de arquivos do Pyodide (FS) não está disponível");
-        throw new Error("Sistema de arquivos do Pyodide não inicializado");
-    }
-
-    console.log("Buscando executor.py...");
+    // Carrega o arquivo Python externo
     try {
-        const response = await fetch("http://localhost:5000/executor.py");
+        const response = await fetch("executorPython.py");
         if (!response.ok) {
-            throw new Error(`Falha ao carregar executor.py: ${response.statusText}`);
+            throw new Error(`Falha ao carregar executorPython.py: ${response.statusText}`);
         }
-        const pythonScript = await response.text();
-        console.log("executor.py carregado com sucesso:", pythonScript);
-
-        console.log("Gravando executor.py no FS do Pyodide...");
-        pyodide.FS.writeFile("/executor.py", pythonScript);
-        console.log("executor.py gravado com sucesso.");
-
-        console.log("Importando módulo executor...");
-        await pyodide.runPythonAsync(`
-import sys
-sys.path.append('/')
-import executor
-        `);
-        console.log("Módulo executor importado com sucesso.");
-    } catch (error) {
-        console.error("Erro em carregarPythonExterno:", error);
-        throw error;
+        const codigoPython = await response.text();
+        await pyodide.runPythonAsync(codigoPython);
+        console.log("Código Python carregado com sucesso.");
+    } catch (err) {
+        console.error("Erro ao carregar o código Python:", err);
+        alert("Erro ao carregar o código Python!");
+        return;
     }
 }
 
@@ -55,23 +31,22 @@ async function simulatorStandard() {
     stderr.textContent = ""; // Limpa stderr
     output.textContent = ""; // Limpa stdout antes de executar
 
-    const numero = parseInt(numeroInput);
-    if (isNaN(numero) || numero < 1 || numero > 9) {
-        output.textContent = "Erro: Insira um número válido entre 1 e 9.";
+    const numero = parseFloat(numeroInput);
+    if (isNaN(numero) || !Number.isInteger(numero) || numero < 1 || numero > 9) {
+        output.textContent = "Erro: Insira um número inteiro válido entre 1 e 9.";
         return;
     }
 
     try {
-        await carregarPythonExterno();
+        await executarPython(); // Carrega o código Python
 
         console.log(`Executando verificar_par_ou_impar(${numero})...`);
         const cmd = `
-from executor import verificar_par_ou_impar
 verificar_par_ou_impar(${numero})
         `;
         const pyodide = await pyodideReady;
         const resultado = await pyodide.runPythonAsync(cmd);
-        output.textContent = resultado;
+        output.textContent = `Resultado: ${resultado}`;
         console.log("Execução bem-sucedida:", resultado);
     } catch (error) {
         console.error("Erro ao executar simulatorStandard:", error);
@@ -88,12 +63,11 @@ async function simulatorStderr() {
     output.textContent = ""; // Limpa stderr antes de executar
 
     try {
-        await carregarPythonExterno();
+        await executarPython(); // Carrega o código Python
 
         console.log("Executando simular_erro...");
         const cmd = `
 import sys
-from executor import simular_erro
 try:
     simular_erro()
 except Exception as e:
